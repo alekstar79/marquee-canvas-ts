@@ -1,0 +1,100 @@
+/**
+ * Marquee Canvas Library - Core Library Styles
+ * 
+ * This file contains only the essential styles required for the marquee components to function.
+ * These styles will be included in the library distribution.
+ */
+
+/* CSS Custom Properties (Variables) for theming */
+:root {
+  /* Color Palette */
+  --color-dark: #1e2327;
+  --color-accent-1: #f3bb0b;
+  --color-accent-2: #337baa;
+  --color-accent-3: rgba(202, 39, 39, 0.7);
+  --color-accent-4: rgba(47, 215, 31, 0.8);
+  --color-text-light: #ffffff;
+  --color-text-dark: #333333;
+
+  /* Typography */
+  --font-family-primary: 'Roboto', sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Spacing Scale */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
+
+/* Marquee Canvas Container Styles - ESSENTIAL */
+.marquee-canvas,
+marquee-canvas {
+  width: 100%;
+  display: block;
+  position: relative;
+  margin: var(--spacing-xs) 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+/* Canvas Element Styles - ESSENTIAL */
+[data-canvas],
+canvas[data-marquee] {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: none;
+  outline: none;
+}
+
+/* Animation State Classes - ESSENTIAL */
+.paused {
+  animation-play-state: paused !important;
+}
+
+/* Responsive Design - Mobile First Approach */
+@media (max-width: 768px) {
+  .marquee-canvas,
+  marquee-canvas {
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-canvas,
+  marquee-canvas {
+    margin: 3px 0;
+  }
+}
+
+/* High-DPI Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .marquee-canvas,
+  marquee-canvas {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Accessibility Features */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-canvas,
+  marquee-canvas {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .marquee-canvas,
+  marquee-canvas {
+    break-inside: avoid;
+    background: white !important;
+    color: black !important;
+  }
+}

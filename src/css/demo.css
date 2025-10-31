@@ -1,0 +1,89 @@
+/**
+ * Marquee Canvas Project - Demo Application Styles
+ * 
+ * This file contains demo-specific styles and will only be included in the example build.
+ * These styles are NOT part of the library distribution.
+ */
+
+/* CSS Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Base HTML and Body styles for demo
+ */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-family-primary), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Body and Background Styles - DEMO ONLY */
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-dark);
+  color: var(--color-text-light);
+}
+
+/**
+ * Background overlay using pseudo-element - DEMO ONLY
+ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('../assets/images/background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-dark);
+  filter: brightness(0.25);
+  z-index: -1;
+}
+
+/* Typography Utilities - DEMO ONLY */
+.roboto-roman500 {
+  font-family: var(--font-family-primary), sans-serif;
+  font-optical-sizing: auto;
+  font-weight: var(--font-weight-medium);
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Layout Components - DEMO ONLY */
+.banner {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: 3em;
+  z-index: 1;
+}
+
+/* Demo-specific color variations - DEMO ONLY */
+.visually-title {
+  font-size: 3em;
+  margin: 0 0.5em;
+}
+
+.marquee-2,
+.marquee-canvas-2 {
+  background-color: var(--color-accent-1);
+}
+
+.marquee-4, .marquee-canvas-1 {
+  background-color: rgba(255, 255, 255, 0.1);
+}

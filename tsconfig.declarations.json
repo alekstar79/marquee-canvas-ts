@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // Generate declaration files for library
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    // Don't check for unused locals/parameters in declarations
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    // Allow emitting for library
+    "noEmit": false
+  },
+  "include": ["src/lib.ts", "src/components/**/*.ts", "src/utils/**/*.ts"],
+  "exclude": ["src/index.ts", "node_modules", "example"]
+}

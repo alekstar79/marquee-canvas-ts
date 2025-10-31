@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    // Target modern JavaScript for better performance
+    "target": "ES2022",
+    // Use modern module system
+    "module": "ESNext",
+    // Library files to include (DOM APIs, modern JavaScript features)
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    // Module resolution strategy
+    "moduleResolution": "bundler",
+    // Allow importing TypeScript files directly
+    "allowImportingTsExtensions": true,
+    // Enable strict type checking for better code quality
+    "strict": true,
+    // Skip type checking of declaration files from node_modules (faster builds)
+    "skipLibCheck": true,
+    // Ensure each file can be transpiled independently
+    "isolatedModules": true,
+    // Don't emit compiled files for demo build (Vite handles this)
+    "noEmit": true,
+    // Check for unused variables and parameters
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    // Report errors for fallthrough cases in switch statements
+    "noFallthroughCasesInSwitch": true,
+    // Base directory for non-relative module imports
+    "baseUrl": ".",
+    // Path mapping for module imports (used with Vite aliases)
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    // Additional options for library build
+    "declaration": false,
+    "outDir": "./dist"
+  },
+
+  // Files to include in compilation
+  "include": ["src/**/*.ts"],
+  // Files to exclude from compilation
+  "exclude": ["node_modules", "dist", "example"]
+}

@@ -1,0 +1,67 @@
+{
+  "name": "@alekstar79/marquee-canvas-ts",
+  "version": "1.0.0",
+  "description": "A high-performance canvas-based marquee animation system built with TypeScript and Vite",
+  "author": "Aleksey Tarasenko <alekstar79@yandex.ru>",
+  "license": "MIT",
+  "type": "module",
+  "private": false,
+  "keywords": [
+    "canvas",
+    "marquee",
+    "animation",
+    "typescript",
+    "vite",
+    "web-components",
+    "custom-elements"
+  ],
+  "homepage": "https://github.com/alekstar79/marquee-canvas-ts#readme",
+  "bugs": {
+    "url": "https://github.com/alekstar79/marquee-canvas-ts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alekstar79/marquee-canvas-ts.git"
+  },
+  "main": "./dist/marquee-canvas.umd.js",
+  "module": "./dist/marquee-canvas.mjs",
+  "types": "./dist/lib.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/marquee-canvas.mjs",
+      "require": "./dist/marquee-canvas.umd.js",
+      "types": "./dist/lib.d.ts"
+    },
+    "./style": {
+      "import": "./dist/marquee-canvas.css",
+      "require": "./dist/marquee-canvas.css"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --config vite.config.ts",
+    "build:lib": "npm run build:lib:js && npm run build:lib:types",
+    "build:lib:js": "vite build --config vite-lib.config.ts",
+    "build:lib:types": "tsc --project tsconfig.declarations.json",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build:lib",
+    "pub:dry-run": "npm run build:lib && npm publish --dry-run",
+    "pub:beta": "npm run build:lib && npm publish --tag beta",
+    "pub:patch": "npm version patch && npm run build:lib && npm publish",
+    "pub:minor": "npm version minor && npm run build:lib && npm publish",
+    "pub:major": "npm version major && npm run build:lib && npm publish",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8"
+  }
+}
